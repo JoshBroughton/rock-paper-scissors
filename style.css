@@ -4,34 +4,12 @@ body {
     font-family: sans-serif;
     text-align: center;
 }
-.center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+.container {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-rows: 25%;
 }
-.center-high {
-    margin: 0;
-    position: absolute;
-    top: 27%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    font-size: 50px;
-    font-weight: bold;
-}
-.center-low {
-    margin: 0;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    font-size: 40px;
-    font-weight: bold;
-}
+
 .button {
     background-color: black;
     border-color:rgb(22, 22, 22);
