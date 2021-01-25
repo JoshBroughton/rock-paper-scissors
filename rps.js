@@ -13,7 +13,7 @@ function game() {
         lossCount += 1;
       }
     }
-    console.log(`How'd you do? Wins: ${winCount} Ties: ${tieCount} Losses: ${lossCount}`);
+    div.textContent = `How'd you do? Wins: ${winCount} Ties: ${tieCount} Losses: ${lossCount}`;
   }
   function computerPlay() {
     let ranNum = Math.floor((Math.random() * 3) + 1);
@@ -32,26 +32,31 @@ function game() {
     let computerChoice = computerSelection.toLowerCase();
     //check for ties - cases must much for equality operator to return true
     //then run through the various other possibilites and return correct string
+    const div = document.querySelector("#results");
     if (playerChoice === computerChoice) {
-      console.log(`Are you a computer? You both threw ${computerSelection}, so you tied!`);
+      div.textContent = `Are you a computer? You both threw ${computerSelection}, so you tied!`;
       return "tie";
     } else if (playerChoice === "rock" && computerChoice === "paper")  {
-      console.log("Sorry loser, Paper covers Rock!");
+      div.textContent = "Sorry loser, Paper covers Rock!";
       return "loss";
     } else if (playerChoice === "rock" && computerChoice === "scissors") {
-      console.log("Excellent decision sir, Rock SMASHES Scissors!");
+      div.textContent = "Excellent decision sir, Rock SMASHES Scissors!";
       return "win";
     } else if (playerChoice === "paper" && computerChoice === "rock") {
-      console.log("Paper truly is mightier than a stone! Victory!");
+      div.textContent = "Paper truly is mightier than a stone! Victory!";
       return "win";
     } else if (playerChoice === "paper" && computerChoice === "scissors") {
-      console.log("Did you really think PAPER could win? Scissors CUT you");
+      div.textContent = "Did you really think PAPER could win? Scissors CUT you";
       return "loss";
     } else if (playerChoice === "scissors" && computerChoice === "rock") {
-      console.log("You've been smashed to bits! LOSE");
+      div.textContent = "You've been smashed to bits! LOSE";
       return "loss";
     } else if (playerChoice === "scissors" && computerChoice === "paper") {
-      console.log("You were made for this, forged for this... Scissors easilly cut Paper!");
+      div.textContent = "You were made for this, forged for this... Scissors easilly cut Paper!";
       return "win";
     }  
   }
+const btns = Array.from(document.querySelectorAll('button'));
+btns.forEach(btn => btn.addEventListener('click', function(e) {
+  playRound(this.id, computerPlay());
+}))
