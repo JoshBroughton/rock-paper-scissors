@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(65, 65, 65);
+}
+.center {
+    margin: 0;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.button {
+    background-color: black;
+    border-color:rgb(22, 22, 22);
+    border-radius: 25px;
+    font-size: 24px;
+    color: white;
+}
