@@ -3,8 +3,20 @@ let losses = 0;
 function winTrack(result) {
   if (result === 'win') {
     wins += 1;
+    const div = document.querySelector("#playerScore");
+    if (wins === 1) {
+      div.textContent = `Player: ${wins} win!`;
+    } else {
+      div.textContent = `Player: ${wins} wins!`;
+    }
   } else if (result === 'loss') {
     losses += 1;
+    const div = document.querySelector("#computerScore");
+    if (losses === 1) {
+      div.textContent = `Computer: ${losses} win!`;
+    } else {
+      div.textContent = `Computer: ${losses} wins!`;
+    }
   }
 }
   
