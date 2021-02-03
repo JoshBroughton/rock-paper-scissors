@@ -1,20 +1,13 @@
-function game() {
-    let winCount = 0;
-    let tieCount = 0;
-    let lossCount = 0;
-    for (let i = 1; i <= 5; i++) {
-      //play round and record RETURN as outcome so we can keep track
-      let outcome = playRound(window.prompt("Rock, Paper, or Scissors?"), computerPlay());
-      if (outcome === "tie") {
-        tieCount += 1;
-      } else if (outcome === "win") {
-        winCount += 1;
-      } else {
-        lossCount += 1;
-      }
-    }
-    div.textContent = `How'd you do? Wins: ${winCount} Ties: ${tieCount} Losses: ${lossCount}`;
+let wins = 0;
+let losses = 0;
+function winTrack(result) {
+  if (result === 'win') {
+    wins += 1;
+  } else if (result === 'loss') {
+    losses += 1;
   }
+}
+  
   function computerPlay() {
     let ranNum = Math.floor((Math.random() * 3) + 1);
     if (ranNum === 1) {
@@ -58,5 +51,5 @@ function game() {
   }
 const btns = Array.from(document.querySelectorAll('button'));
 btns.forEach(btn => btn.addEventListener('click', function(e) {
-  playRound(this.id, computerPlay());
+  winTrack(playRound(this.id, computerPlay()));
 }))
